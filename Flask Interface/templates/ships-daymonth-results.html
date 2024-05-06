@@ -1,0 +1,43 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <h1>{{ app_data['description'] }}</h1>
+
+    <hr class="my-4">
+
+    <h4>Report on the Number of Ships in Singapore Waters & their Average Speed (based on Day / Month / Year)</h4>
+    
+    <h5>Display Query Results:</h5>
+
+        <table>
+          <tr>
+                <th>Date</th>
+                <th>Weekday Indicator</th>
+                <th>Holiday Indicator</th>
+                <th>Ship Category</th>
+                <th>Unique Ship Count</th>
+                <th>Average Speed</th>
+                <th>SD Speed</th>
+                <th>Min Speed</th>
+                <th>Max Speed</th>
+          </tr>
+          {% for row in data %}
+          <tr>
+              <td>{{ row[0] }}</td>
+              <td>{{ row[1] }}</td>
+              <td>{{ row[2] }}</td>
+              <td>{{ row[3] }}</td>
+              <td>{{ row[4] }}</td>
+              <td>{{ row[5] }}</td>
+              <td>{{ row[6] }}</td>
+              <td>{{ row[7] }}</td>
+              <td>{{ row[8] }}</td>
+          </tr>
+          {% endfor %}
+      </table>
+
+      <!-- d.date, d.weekday_indicator, d.holiday_indicator, v.shipcategory, COUNT(DISTINCT f.shipid), mf.avgspeed, mf.stdspeed, mf.minspeed, mf.maxspeed -->
+
+
+    <!-- <div> Now updated to Bootstrap (Version 5.3.0) and jQuery 3.6.3</div> -->
+{% endblock %}

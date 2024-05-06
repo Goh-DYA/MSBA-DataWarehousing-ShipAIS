@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <h1>{{ app_data['description'] }}</h1>
+    <h2>StarAIS Queries</h2>
+
+        <p>The user input will be placed here</p>
+        <p>The query will appear here</p>
+
+        <table> 
+            <thead> 
+              <tr> 
+                <th>Status</th> 
+                <th>Status Description</th> 
+                <!-- <th>Price</th> 
+                <th>Actions</th>  -->
+              </tr> 
+            </thead> 
+            <tbody> 
+              {% for row in data %} 
+              <tr> 
+                <td>{{ row[0] }}</td> 
+                <td>{{ row[1] }}</td> 
+                <!-- <td>{{ row[2] }}</td>  -->
+              </tr> 
+              {% endfor %} 
+            </tbody> 
+        </table> 
+
+
+    <div> Now updated to Bootstrap (Version 5.3.0) and jQuery 3.6.3</div>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<div class="jumbotron">
+    <h2 class="display-4">Welcome to BT5110 Project Group 12's Flask Application</h2>
+    <p class="lead">This application illustrates the generation of a report for monitoring of marine ship traffic in Singapore.</p>
+    <!-- <p>Title: {{ app_data['html_title'] }}</p> -->
+
+    <hr class="my-4">
+    <h4>There are two key features to this application:</h4>
+    <p>Feature 1: Finding the Number of Ships in Singapore Waters & their Average Speed (based on Day / Month / Year) </p>
+    <a class="btn btn-primary btn-lg" href="/ships-daymonth" role="button" style="margin-bottom: 25px;">Report of Ships in Singapore Waters</a>
+
+    <p>Feature 2: Finding the Number of Ships Docked in Singapore Ports by Time of the Day (based on Day / Month / Year) </p>
+    <a class="btn btn-primary btn-lg" href="/ships-timeperiod" role="button" style="margin-bottom: 25px;">Report of Ships Docked in Singapore Ports</a>
+  </div>
+{% endblock %}

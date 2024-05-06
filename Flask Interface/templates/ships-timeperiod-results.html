@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <h1>{{ app_data['description'] }}</h1>
+
+    <hr class="my-4">
+
+    <h4>Report on the Number of Ships Docked in Singapore Ports by Time of the Day (based on Day / Month / Year)</h4>
+    
+    <h5>Display Query Results:</h5>
+
+    <table>
+        <thead>
+            <tr>
+                {% for column in columns %}
+                    <th>{{ column }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in data %}
+                <tr>
+                    {% for cell in row %}
+                        <td>{{ cell }}</td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table> 
+
+    <!-- <div> Now updated to Bootstrap (Version 5.3.0) and jQuery 3.6.3</div> -->
+{% endblock %}

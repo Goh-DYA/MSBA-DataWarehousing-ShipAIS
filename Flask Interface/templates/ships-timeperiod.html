@@ -1,0 +1,55 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <h1>{{ app_data['description'] }}</h1>
+
+    <hr class="my-4">
+
+    <h4>Report on the Number of Ships Docked in Singapore Ports by Time of the Day (based on Day / Month / Year)</h4>
+
+    <h5>Enter Query Parameters (By Time Period)</h5>
+        
+    <form action="/ships-timeperiod-results" method="POST">
+        <label for="search_type">Search by:</label>
+        <select name="search_type" required>
+            <option value="month_year_port">Individual Port; Month + Year</option>
+            <option value="day_month_year_port">Individual Port; Day + Month + Year</option>
+            <option value="month_year_all">All Ports; Month + Year</option>
+            <option value="day_month_year_all">All Ports; Day + Month + Year</option>
+        </select><br>
+
+        <label for="calendar_year">Calendar Year:</label>
+        <select name="calendar_year" required>
+            <option value="2019">2019</option>
+            <option value="2020">2020</option>
+            <option value="2021">2021</option>
+        </select><br>
+    
+        <label for="month_number">Month Number:</label>
+        <select name="month_number" required>
+            <option value="12">12</option>
+            <option value="1">1</option>
+        </select><br>
+
+        <label for="day_number_in_month">Day Number:</label>
+        <input type="text" name="day_number_in_month"><br>
+
+        <label for="port_name">Select Port:</label>
+        <!-- <select name="port_name" required> -->
+        <select name="port_name">
+            <option value="">All Ports</option>
+            <option value="Port Brani">Port Brani</option>
+            <option value="Port Bukom">Port Bukom</option>
+            <option value="Port Jurong Island">Port Jurong Island</option>
+            <option value="Port Marina Bay Cruise Centre">Port Marina Bay Cruise Centre</option>
+            <option value="Port Pasir Panjang">Port Pasir Panjang</option>
+            <option value="Port Tanjong Pagar">Port Tanjong Pagar</option>
+            <option value="Port Tuas">Port Tuas</option>            
+        </select><br>        
+
+        <input type="submit" value="Search">
+    </form>
+
+
+    <!-- <div> Now updated to Bootstrap (Version 5.3.0) and jQuery 3.6.3</div> -->
+{% endblock %}
